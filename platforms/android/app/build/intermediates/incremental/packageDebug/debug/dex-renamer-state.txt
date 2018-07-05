@@ -1,0 +1,4 @@
+#Wed Jun 13 20:07:59 VET 2018
+base.0=C\:\\Proyectos_Ionic\\delivery\\delivery_empresa\\deliemp\\platforms\\android\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0
+renamed.0=classes.dex
+file.0=C\:\\Proyectos_Ionic\\delivery\\delivery_empresa\\deliemp\\platforms\\android\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0\\classes.dex

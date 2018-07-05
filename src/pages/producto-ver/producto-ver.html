@@ -1,0 +1,126 @@
+
+<ion-header>
+
+  <ion-navbar color="color_nav_bar">
+  	<button  ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Ver producto</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding class="fondo">
+    <ion-card>
+      <ion-card-header>
+      <div align="center">
+        <strong>Producto: # {{result_producto.id_producto}}</strong>
+      </div> 
+      </ion-card-header>
+      <hr>
+      <ion-card-content>
+      <ion-list>
+        <div text-wrap>
+          <ion-row>
+              <img src="{{ruta_imagen}}{{result_producto.imagen}}" />
+          </ion-row>
+        </div>
+        <div text-wrap>
+          <ion-row>
+            <ion-col col-1>
+            <ion-card-title>
+              <h5>
+              <ion-icon name="ios-basket" item-start></ion-icon>
+              </h5>
+            </ion-card-title>
+            </ion-col>
+            <ion-col>
+            <ion-card-title>
+            <h5>{{result_producto.nombre_producto}}</h5>
+            </ion-card-title>
+            </ion-col>
+          </ion-row>
+        </div>
+        <div text-wrap>
+          <ion-row>
+            <ion-col col-1>
+            <ion-card-title>
+              <h5>
+              <ion-icon name="ios-checkmark-circle" item-start></ion-icon>
+              </h5>
+            </ion-card-title>
+            </ion-col>
+            <ion-col>
+            <ion-card-title>
+            <h5><strong>Descripcion:</strong> {{result_producto.descripcion_producto}}</h5>
+            </ion-card-title>
+            </ion-col>
+          </ion-row>
+        </div>
+        <div text-wrap>
+          <ion-row>
+            <ion-col col-1>
+            <ion-card-title>
+              <h5>
+              <ion-icon name="ios-copy" item-start></ion-icon>
+              </h5>
+            </ion-card-title>
+            </ion-col>
+            <ion-col>
+            <ion-card-title>
+            <h5><strong>Categoria:</strong> {{result_producto.categoria}}</h5>
+            </ion-card-title>
+            </ion-col>
+          </ion-row>
+        </div>
+        <div text-wrap>
+          <ion-row>
+            <ion-col col-1>
+            <ion-card-title>
+              <h5>
+              <ion-icon name="ios-cash" item-start></ion-icon>
+              </h5>
+            </ion-card-title>
+            </ion-col>
+            <ion-col>
+            <ion-card-title>
+            <h5><strong>Precio:</strong> {{result_producto.precio | number : '1.2-2'}}</h5>
+            </ion-card-title>
+            </ion-col>
+          </ion-row>
+        </div>
+      </ion-list>
+      </ion-card-content>
+      <hr>
+      <ion-row>
+        <ion-col>
+          <div *ngIf="result_producto.id_status==1">
+            <div align="center">
+               <button ion-button small color="primary" icon-start (click)="ver_producto(result_producto.id_producto)">
+                <ion-icon name='ios-close-circle'></ion-icon>
+                Dar de Baja
+              </button>
+            </div>
+          </div>
+          <div *ngIf="result_producto.id_status==2">
+            <div align="center">
+               <button ion-button small color="primary" icon-start (click)="ver_producto(result_producto.id_producto)">
+                <ion-icon name='md-checkmark'></ion-icon>
+                Dar de Alta
+              </button>
+            </div>
+          </div>
+        </ion-col>
+        <ion-col>
+          <div align="center">
+         <button ion-button small color="primary" icon-start (click)="ver_producto(result_producto.id_producto)">
+          <ion-icon name='eye'></ion-icon>
+          Ver extras
+        </button>
+      </div>
+        </ion-col>
+      </ion-row>
+      <br>
+    </ion-card>
+
+</ion-content>

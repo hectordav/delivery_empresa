@@ -1,0 +1,8 @@
+{
+  "name": "deliemp",
+  "app_id": "60120adb",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}

@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-navbar color="color_nav_bar">
+    <ion-title>Nuevo Producto</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+	
+  <ion-item>
+    <ion-label>Categoria</ion-label>
+    <ion-select [(ngModel)]="data_producto.id_categoria">
+      	<ion-option value="">Seleccione</ion-option>
+      <div *ngFor="let item of result_categoria">
+      	<ion-option value="{{item.id}}">{{item.descripcion}}</ion-option>
+      </div>
+    </ion-select>
+  </ion-item>
+  <ion-item>
+    <ion-label floating >Producto</ion-label>
+   	<ion-input type="text" [(ngModel)]="data_producto.nombre"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label floating >Descripcion</ion-label>
+   	<ion-input type="text" [(ngModel)]="data_producto.descripcion"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label floating >Precio</ion-label>
+   	<ion-input type="number" [(ngModel)]="data_producto.precio"></ion-input>
+  </ion-item>
+<ion-item>
+    <div (click)="hoja_foto_perfil()" *ngIf="foto_perfil; else other_content">
+      <ion-icon name="md-checkmark"></ion-icon> {{foto_perfil}}
+    </div>
+  <ng-template #other_content>
+    <div (click)="hoja_foto_perfil()">
+      <ion-icon name="camera"></ion-icon> Seleccione Imagen de Perfil
+    </div>
+  </ng-template>  
+</ion-item>
+</ion-content>
+<ion-footer>
+  <button ion-button color="boton_aceptar" block (click)="guardar_producto()">
+    Agregar
+  </button>
+</ion-footer>
